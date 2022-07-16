@@ -5,7 +5,7 @@ COPY pom.xml .
 COPY src ./src
 RUN mvn package -Dmaven.test.skip
 
-FROM adoptopenjdk/openjdk11
+FROM adoptopenjdk/openjdk11:jre
 
 COPY --from=builder usr/app/target/ticketing-project-security-0.0.1-SNAPSHOT.jar /ticketing-project-security-0.0.1-SNAPSHOT.jar
 
